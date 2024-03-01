@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Website</title>
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to my Portfolio</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#servives">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!--About Me Section -->
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="/Pictures/profile.png" alt="Profile Picture">
+                    <p>breif bio and timeline here...</p>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="Portfolio">
+                <h2>Portfolio</h2>
+                <div class="gallery">
+                    <div class="thumbnail">
+                        <img src="project1.jpg" alt="Project 1">
+                        <div class="overlay">
+                            <h3>Project 1</h3>
+                            <p>Description of project 1</p>
+                        </div>
+                    </div>
+                    <!-- More Tumbnails here -->
+                </div>
+            </section>
+
+            <!-- Services Offered Section -->
+            <section id="services">
+                <h2>Services Offered</h2>
+                <ul>
+                    <li>Web design</li>
+                    <li> Application Development</li>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>C#</li>
+                    <!-- Add more services as needed -->
+                </ul>
+            </section>
+
+            
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-carousel">
+                <!-- Testimonials will be added dynamically using JavaScript -->
+            </div>
+        </section>
+
+            <!-- Contact Form Section -->
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your name" required>
+                    <input type="email" id="email" placeholder="Your email" required>
+                    <textarea id="message" placeholder="Your message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="script.js"></script>
+    </body>
+</html>
