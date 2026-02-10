@@ -12,7 +12,7 @@ A beautiful, modern portfolio website with a built-in Content Management System 
 - Pages:
   - Home (Hero + About + Skills + Projects preview)
   - About (Full bio + Skills)
-  - Projects (All projects with detail pages)
+  - Projects (All projects with detail Pages)
   - Contact (Contact form + Social links)
 
 ### Admin Panel
@@ -87,8 +87,8 @@ portfolio-cms/
 │   ├── js/              # JavaScript files
 │   └── images/          # Image uploads
 ├── views/               # EJS templates
-│   ├── pages/           # Main site pages
-│   ├── admin/           # Admin panel pages
+│   ├── Pages/           # Main site Pages
+│   ├── admin/           # Admin panel Pages
 │   └── partials/        # Reusable components
 ├── routes/
 │   ├── main.js          # Public routes
@@ -158,7 +158,7 @@ Edit `public/css/style.css` and modify the CSS variables at the top:
 
 ### Add Custom Pages
 
-1. Create a new EJS file in `views/pages/`
+1. Create a new EJS file in `views/Pages/`
 2. Add a route in `routes/main.js`
 3. Add a navigation link in `views/partials/header.ejs`
 
