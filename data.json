@@ -1,0 +1,99 @@
+{
+    "profile": {
+        "name": "Abbey Kelley",
+        "title": "Full-Stack Developer & Creative Technologist",
+        "subtitle": "Building powerful web applications with modern frameworks and cloud technologies.",
+        "email": "abbey@example.com",
+        "github": "https://github.com/abb3ytv-1",
+        "linkedin": "https://www.linkedin.com/in/abbey-kelley",
+        "instagram": "https://instagram.com/abb3ytv",
+        "youtube": "https://youtube.com/@abb3ytv",
+        "bio": [
+        "I'm Abbey Kelley, a full-stack developer passionate about building scalable web applications and exploring the latest technologies. With expertise spanning front-end frameworks to cloud infrastructure, I love solving complex problems through elegant code.",
+        "My technical toolkit includes React, Node.js, Python, and modern cloud platforms like AWS, Azure, and Google Cloud. I'm equally comfortable designing intuitive user interfaces with Figma and deploying containerized applications with Docker.",
+        "Whether it's developing full-stack applications, working with databases, or creating beautiful designs, I approach every project with curiosity and a commitment to continuous learning."
+        ]
+    },
+    "skills": [
+        {
+        "id": 1,
+        "category": "Frontend Development",
+        "items": ["React", "React Native", "JavaScript", "TypeScript", "HTML5", "CSS3", "TailwindCSS", "Bootstrap"]
+        },
+        {
+        "id": 2,
+        "category": "Backend Development",
+        "items": ["Node.js", "Express.js", "Python", "FastAPI", ".NET", "C#", "Java", "C++"]
+        },
+        {
+        "id": 3,
+        "category": "Database & Cloud",
+        "items": ["MongoDB", "MySQL", "MS SQL Server", "AWS", "Azure", "Google Cloud", "Docker", "Nginx"]
+        },
+        {
+        "id": 4,
+        "category": "Tools & Design",
+        "items": ["Git/GitHub", "Postman", "Figma", "Adobe Suite", "Canva", "Grafana", "Jira", "Notion"]
+        }
+    ],
+    "projects": [
+        {
+        "id": 1,
+        "type": "Full-Stack Application",
+        "title": "Video Game Exchange",
+        "description": "A full-stack platform for trading and exchanging video games, featuring user authentication, real-time notifications, and a responsive interface.",
+        "technologies": ["Python", "React", "MongoDB"],
+        "link": "",
+        "image": ""
+        },
+        {
+        "id": 2,
+        "type": "Web Application",
+        "title": "E-Commerce Platform",
+        "description": "Modern e-commerce solution with secure payment processing, inventory management, and admin dashboard built with Node.js and React.",
+        "technologies": ["Node.js", "Express", "MySQL"],
+        "link": "",
+        "image": ""
+        },
+        {
+        "id": 3,
+        "type": "Mobile App",
+        "title": "Task Manager Pro",
+        "description": "Cross-platform productivity app with smart task prioritization, team collaboration features, and cloud synchronization.",
+        "technologies": ["React Native", "Firebase", "TypeScript"],
+        "link": "",
+        "image": ""
+        },
+        {
+        "id": 4,
+        "type": "Cloud Infrastructure",
+        "title": "Microservices Architecture",
+        "description": "Scalable microservices deployment on AWS using Docker containers, with automated CI/CD pipeline and monitoring.",
+        "technologies": ["Docker", "AWS", "Nginx"],
+        "link": "",
+        "image": ""
+        },
+        {
+        "id": 5,
+        "type": "API Development",
+        "title": "RESTful API Service",
+        "description": "High-performance REST API built with FastAPI, featuring JWT authentication, rate limiting, and comprehensive documentation.",
+        "technologies": ["Python", "FastAPI", "PostgreSQL"],
+        "link": "",
+        "image": ""
+        },
+        {
+        "id": 6,
+        "type": "UI/UX Design",
+        "title": "Design System Library",
+        "description": "Comprehensive design system with reusable components, built in Figma and implemented with React and TailwindCSS.",
+        "technologies": ["Figma", "React", "TailwindCSS"],
+        "link": "",
+        "image": ""
+        }
+    ],
+    "admin": {
+        "username": "admin",
+        "password": "$2a$10$N9qo8uLOickgx2ZMRZoMye5TgC5TZR7S7YvJr4cMGqFwBvVdpEU6a"
+    }
+}

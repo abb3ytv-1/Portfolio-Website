@@ -1,0 +1,47 @@
+<% const page = 'projects'; %>
+<%- include('../partials/header', { profile, page }) %>
+
+<section style="padding-top: 8rem; min-height: 100vh;">
+    <div class="container">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <a href="/projects" style="color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 2rem; font-weight: 500;">
+                ← Back to Projects
+            </a>
+            
+            <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);">
+                <div class="project-type" style="margin-bottom: 0.5rem;"><%= project.type %></div>
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1.5rem;"><%= project.title %></h1>
+                
+                <% if (project.image) { %>
+                    <img src="<%= project.image %>" alt="<%= project.title %>" style="width: 100%; border-radius: 15px; margin-bottom: 2rem;">
+                <% } else { %>
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                        Project Image
+                    </div>
+                <% } %>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Technologies Used</h3>
+                    <div class="project-tech">
+                        <% project.technologies.forEach(tech => { %>
+                            <span class="tech-badge" style="font-size: 1rem; padding: 0.6rem 1.2rem;"><%= tech %></span>
+                        <% }); %>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Project Description</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem;"><%= project.description %></p>
+                </div>
+                
+                <% if (project.link) { %>
+                    <a href="<%= project.link %>" target="_blank" class="cta-button" style="display: inline-block;">
+                        View Project →
+                    </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer', { profile }) %>

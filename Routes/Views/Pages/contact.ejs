@@ -1,0 +1,66 @@
+<% const page = 'contact'; %>
+<%- include('../partials/header', { profile, page }) %>
+
+<section style="padding-top: 8rem; min-height: 100vh;">
+    <div class="container">
+        <h1 class="section-title">Get In Touch</h1>
+        <p class="section-subtitle">Have a project in mind? Let's work together</p>
+        
+        <div class="contact-content">
+            <% if (typeof success !== 'undefined' && success) { %>
+                <div class="success-message">
+                    <%= success %>
+                </div>
+            <% } %>
+            
+            <form class="contact-form" method="POST" action="/contact">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
+                </div>
+                <% if (profile.github) { %>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <a href="<%= profile.github %>" target="_blank">@<%= profile.github.split('/').pop() %></a>
+                </div>
+                <% } %>
+                <% if (profile.linkedin) { %>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="<%= profile.linkedin %>" target="_blank"><%= profile.linkedin.split('/').pop() %></a>
+                </div>
+                <% } %>
+                <% if (profile.instagram) { %>
+                <div class="contact-item">
+                    <h3>Instagram</h3>
+                    <a href="<%= profile.instagram %>" target="_blank">@<%= profile.instagram.split('/').pop() %></a>
+                </div>
+                <% } %>
+                <% if (profile.youtube) { %>
+                <div class="contact-item">
+                    <h3>YouTube</h3>
+                    <a href="<%= profile.youtube %>" target="_blank">@<%= profile.youtube.split('/').pop() %></a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer', { profile }) %>

@@ -1,0 +1,35 @@
+<% const page = 'projects'; %>
+<%- include('../partials/header', { profile, page }) %>
+
+<section style="padding-top: 8rem;">
+    <div class="container">
+        <h1 class="section-title">My Projects</h1>
+        <p class="section-subtitle">Explore my work across different technologies and domains</p>
+        
+        <div class="projects-grid">
+            <% projects.forEach(project => { %>
+                <a href="/projects/<%= project.id %>" class="project-card">
+                    <div class="project-image">
+                        <% if (project.image) { %>
+                            <img src="<%= project.image %>" alt="<%= project.title %>" style="width: 100%; height: 100%; object-fit: cover;">
+                        <% } else { %>
+                            <span>Project Image</span>
+                        <% } %>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-type"><%= project.type %></div>
+                        <h3 class="project-title"><%= project.title %></h3>
+                        <p class="project-description"><%= project.description %></p>
+                        <div class="project-tech">
+                            <% project.technologies.forEach(tech => { %>
+                                <span class="tech-badge"><%= tech %></span>
+                            <% }); %>
+                        </div>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer', { profile }) %>

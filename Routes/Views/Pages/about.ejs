@@ -1,0 +1,36 @@
+<% const page = 'about'; %>
+<%- include('../partials/header', { profile, page }) %>
+
+<section style="padding-top: 8rem;">
+    <div class="container">
+        <h1 class="section-title">About Me</h1>
+        <p class="section-subtitle">Get to know more about my journey and expertise</p>
+        
+        <div class="about-content" style="margin-bottom: 4rem;">
+            <div class="about-text">
+                <% profile.bio.forEach(paragraph => { %>
+                    <p><%= paragraph %></p>
+                <% }); %>
+            </div>
+            <div class="about-image">
+                <span>Your Image Here</span>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="margin-bottom: 3rem;">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <% skills.forEach(skillCategory => { %>
+                <div class="skill-category">
+                    <h3><%= skillCategory.category %></h3>
+                    <div class="skill-tags">
+                        <% skillCategory.items.forEach(skill => { %>
+                            <span class="skill-tag"><%= skill %></span>
+                        <% }); %>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer', { profile }) %>

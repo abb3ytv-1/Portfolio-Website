@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <h2>Portfolio CMS</h2>
+            <ul class="admin-nav">
+                <li><a href="/admin" class="active">Dashboard</a></li>
+                <li><a href="/admin/profile">Edit Profile</a></li>
+                <li><a href="/admin/skills">Edit Skills</a></li>
+                <li><a href="/admin/projects">Manage Projects</a></li>
+                <li><a href="/" target="_blank">View Site</a></li>
+                <li><a href="/admin/logout">Logout</a></li>
+            </ul>
+        </aside>
+        
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1>Dashboard</h1>
+                <a href="/admin/logout" class="btn btn-secondary">Logout</a>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3><%= projects.length %></h3>
+                    <p>Total Projects</p>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
+                    <h3><%= skills.length %></h3>
+                    <p>Skill Categories</p>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                    <h3>1</h3>
+                    <p>Admin User</p>
+                </div>
+            </div>
+            
+            <div class="admin-content">
+                <h2>Quick Actions</h2>
+                <div class="quick-links">
+                    <a href="/admin/profile" class="quick-link">
+                        <h3>Edit Profile</h3>
+                        <p>Update your personal information and bio</p>
+                    </a>
+                    <a href="/admin/skills" class="quick-link">
+                        <h3>Edit Skills</h3>
+                        <p>Manage your technical skills and expertise</p>
+                    </a>
+                    <a href="/admin/projects" class="quick-link">
+                        <h3>Manage Projects</h3>
+                        <p>Add, edit, or remove portfolio projects</p>
+                    </a>
+                    <a href="/" target="_blank" class="quick-link">
+                        <h3>View Live Site</h3>
+                        <p>See how your portfolio looks to visitors</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
