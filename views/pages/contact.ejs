@@ -2,63 +2,65 @@
 <%- include('../partials/header', { profile, page }) %>
 
 <section style="padding-top: 8rem; min-height: 100vh;">
-    <div class="container">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
         <h1 class="section-title">Get In Touch</h1>
         <p class="section-subtitle">Have a project in mind? Let's work together</p>
         
-        <div class="contact-content">
-            <% if (typeof success !== 'undefined' && success) { %>
-                <div class="success-message">
-                    <%= success %>
-                </div>
-            <% } %>
-            
-            <form class="contact-form" method="POST" action="/contact">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
-                </div>
-                <% if (profile.github) { %>
-                <div class="contact-item">
-                    <h3>GitHub</h3>
-                    <a href="<%= profile.github %>" target="_blank">@<%= profile.github.split('/').pop() %></a>
-                </div>
-                <% } %>
-                <% if (profile.linkedin) { %>
-                <div class="contact-item">
-                    <h3>LinkedIn</h3>
-                    <a href="<%= profile.linkedin %>" target="_blank"><%= profile.linkedin.split('/').pop() %></a>
-                </div>
-                <% } %>
-                <% if (profile.instagram) { %>
-                <div class="contact-item">
-                    <h3>Instagram</h3>
-                    <a href="<%= profile.instagram %>" target="_blank">@<%= profile.instagram.split('/').pop() %></a>
-                </div>
-                <% } %>
-                <% if (profile.youtube) { %>
-                <div class="contact-item">
-                    <h3>YouTube</h3>
-                    <a href="<%= profile.youtube %>" target="_blank">@<%= profile.youtube.split('/').pop() %></a>
-                </div>
-                <% } %>
+        <% if (typeof success !== 'undefined' && success) { %>
+            <div class="success-message" style="background-color: #d4edda; color: #155724; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <%= success %>
             </div>
+        <% } %>
+        
+        <form class="contact-form" method="POST" action="/contact" style="margin-bottom: 3rem;">
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required style="width:100%; padding:0.8rem; border-radius:6px; border:1px solid #ccc;">
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required style="width:100%; padding:0.8rem; border-radius:6px; border:1px solid #ccc;">
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required style="width:100%; padding:0.8rem; border-radius:6px; border:1px solid #ccc; min-height:150px;"></textarea>
+            </div>
+            <button type="submit" class="submit-button" style="padding:0.8rem 1.6rem; border:none; border-radius:6px; background-color: var(--accent); color:white; cursor:pointer;">Send Message</button>
+        </form>
+        
+        <div class="contact-info" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:<%= profile.email %>"><%= profile.email %></a>
+            </div>
+
+            <% if (profile.github) { %>
+            <div class="contact-item">
+                <h3>GitHub</h3>
+                <a href="<%= profile.github %>" target="_blank">@<%= profile.github.split('/').pop() %></a>
+            </div>
+            <% } %>
+
+            <% if (profile.linkedin) { %>
+            <div class="contact-item">
+                <h3>LinkedIn</h3>
+                <a href="<%= profile.linkedin %>" target="_blank"><%= profile.linkedin.split('/').pop() %></a>
+            </div>
+            <% } %>
+
+            <% if (profile.instagram) { %>
+            <div class="contact-item">
+                <h3>Instagram</h3>
+                <a href="<%= profile.instagram %>" target="_blank">@<%= profile.instagram.split('/').pop() %></a>
+            </div>
+            <% } %>
+
+            <% if (profile.youtube) { %>
+            <div class="contact-item">
+                <h3>YouTube</h3>
+                <a href="<%= profile.youtube %>" target="_blank">@<%= profile.youtube.split('/').pop() %></a>
+            </div>
+            <% } %>
         </div>
     </div>
 </section>

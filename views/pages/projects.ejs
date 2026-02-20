@@ -11,7 +11,9 @@
                 <a href="/projects/<%= project.id %>" class="project-card">
                     <div class="project-image">
                         <% if (project.image) { %>
-                            <img src="<%= project.image %>" alt="<%= project.title %>" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="<%= project.image.startsWith('/') ? project.image : '/images/' + project.image %>" 
+                                 alt="<%= project.title %>" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         <% } else { %>
                             <span>Project Image</span>
                         <% } %>

@@ -8,70 +8,70 @@
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-    <div class="admin-layout">
-        <aside class="admin-sidebar">
-            <h2>Portfolio CMS</h2>
-            <ul class="admin-nav">
-                <li><a href="/admin">Dashboard</a></li>
-                <li><a href="/admin/profile">Edit Profile</a></li>
-                <li><a href="/admin/skills">Edit Skills</a></li>
-                <li><a href="/admin/projects" class="active">Manage Projects</a></li>
-                <li><a href="/" target="_blank">View Site</a></li>
-                <li><a href="/admin/logout">Logout</a></li>
+    <div class="admin-layout" style="display:flex; min-height:100vh;">
+        <aside class="admin-sidebar" style="width:250px; background:#1f1f1f; color:white; padding:2rem;">
+            <h2 style="margin-bottom:2rem;">Portfolio CMS</h2>
+            <ul class="admin-nav" style="list-style:none; padding:0;">
+                <li><a href="/admin" style="display:block; padding:0.5rem 0; color:white; text-decoration:none;">Dashboard</a></li>
+                <li><a href="/admin/profile" style="display:block; padding:0.5rem 0; color:white; text-decoration:none;">Edit Profile</a></li>
+                <li><a href="/admin/skills" style="display:block; padding:0.5rem 0; color:white; text-decoration:none;">Edit Skills</a></li>
+                <li><a href="/admin/projects" class="active" style="display:block; padding:0.5rem 0; color:var(--accent); text-decoration:none;">Manage Projects</a></li>
+                <li><a href="/" target="_blank" style="display:block; padding:0.5rem 0; color:white; text-decoration:none;">View Site</a></li>
+                <li><a href="/admin/logout" style="display:block; padding:0.5rem 0; color:white; text-decoration:none;">Logout</a></li>
             </ul>
         </aside>
         
-        <main class="admin-main">
-            <div class="admin-header">
-                <h1><%= project ? 'Edit Project' : 'Add New Project' %></h1>
-                <a href="/admin/projects" class="btn btn-secondary">Back to Projects</a>
+        <main class="admin-main" style="flex:1; padding:2rem;">
+            <div class="admin-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem;">
+                <h1 style="margin:0;"><%= project ? 'Edit Project' : 'Add New Project' %></h1>
+                <a href="/admin/projects" class="btn btn-secondary" style="padding:0.6rem 1.2rem; border-radius:6px; background:#ccc; color:black; text-decoration:none;">Back to Projects</a>
             </div>
             
             <div class="admin-content">
                 <% if (success) { %>
-                    <div class="success-message">Project saved successfully!</div>
+                    <div class="success-message" style="margin-bottom:1.5rem; padding:0.8rem 1rem; background:#2ecc71; color:white; border-radius:6px;">Project saved successfully!</div>
                 <% } %>
                 
-                <form method="POST" action="/admin/projects/save" class="admin-form">
+                <form method="POST" action="/admin/projects/save" class="admin-form" style="display:flex; flex-direction:column; gap:1.5rem;">
                     <% if (project) { %>
                         <input type="hidden" name="id" value="<%= project.id %>">
                     <% } %>
                     
                     <div class="form-group">
-                        <label for="title">Project Title</label>
-                        <input type="text" id="title" name="title" value="<%= project ? project.title : '' %>" required>
+                        <label for="title" style="display:block; margin-bottom:0.5rem;">Project Title</label>
+                        <input type="text" id="title" name="title" value="<%= project ? project.title : '' %>" required style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;">
                     </div>
                     
                     <div class="form-group">
-                        <label for="type">Project Type</label>
-                        <input type="text" id="type" name="type" value="<%= project ? project.type : '' %>" required>
-                        <span class="form-hint">e.g., Web Application, Mobile App, UI/UX Design</span>
+                        <label for="type" style="display:block; margin-bottom:0.5rem;">Project Type</label>
+                        <input type="text" id="type" name="type" value="<%= project ? project.type : '' %>" required style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;">
+                        <span class="form-hint" style="font-size:0.85rem; color:#7f8c8d;">e.g., Web Application, Mobile App, UI/UX Design</span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" required><%= project ? project.description : '' %></textarea>
+                        <label for="description" style="display:block; margin-bottom:0.5rem;">Description</label>
+                        <textarea id="description" name="description" required style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;"><%= project ? project.description : '' %></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="technologies">Technologies (comma-separated)</label>
-                        <input type="text" id="technologies" name="technologies" value="<%= project ? project.technologies.join(', ') : '' %>" required>
-                        <span class="form-hint">e.g., React, Node.js, MongoDB</span>
+                        <label for="technologies" style="display:block; margin-bottom:0.5rem;">Technologies (comma-separated)</label>
+                        <input type="text" id="technologies" name="technologies" value="<%= project ? project.technologies.join(', ') : '' %>" required style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;">
+                        <span class="form-hint" style="font-size:0.85rem; color:#7f8c8d;">e.g., React, Node.js, MongoDB</span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="link">Project Link (optional)</label>
-                        <input type="url" id="link" name="link" value="<%= project ? project.link : '' %>">
-                        <span class="form-hint">URL to live project or repository</span>
+                        <label for="link" style="display:block; margin-bottom:0.5rem;">Project Link (optional)</label>
+                        <input type="url" id="link" name="link" value="<%= project ? project.link : '' %>" style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;">
+                        <span class="form-hint" style="font-size:0.85rem; color:#7f8c8d;">URL to live project or repository</span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="image">Image URL (optional)</label>
-                        <input type="url" id="image" name="image" value="<%= project ? project.image : '' %>">
-                        <span class="form-hint">URL to project screenshot or image</span>
+                        <label for="image" style="display:block; margin-bottom:0.5rem;">Image URL (optional)</label>
+                        <input type="url" id="image" name="image" value="<%= project ? project.image : '' %>" style="width:100%; padding:0.6rem 1rem; border-radius:6px; border:1px solid #ccc;">
+                        <span class="form-hint" style="font-size:0.85rem; color:#7f8c8d;">URL to project screenshot or image</span>
                     </div>
                     
-                    <button type="submit" class="btn btn-success">Save Project</button>
+                    <button type="submit" class="btn btn-success" style="padding:0.6rem 1rem; border-radius:6px; background:var(--accent); color:white; border:none; cursor:pointer;">Save Project</button>
                 </form>
             </div>
         </main>
