@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 
+// debug
+console.log('Views directory:', path.join(__dirname, 'views'));
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 

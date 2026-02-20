@@ -227,8 +227,8 @@ For issues or questions:
 
 ## License
 
-MIT License - Feel free to use and modify for your personal portfolio!
+MIT License
 
 ---
 
-Made with ❤️ for Abbey Kelley
+Made with ❤️ by Abbey Kelley
